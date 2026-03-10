@@ -1,15 +1,10 @@
 catboost==1.2.8
-fastapi==0.117.1
-fastjsonschema==2.21.2
-filelock==3.20.0
+
 Flask==3.1.2
 gunicorn==23.0.0
 gitdb==4.0.12
 GitPython==3.1.45
-ipykernel==6.30.1
-ipython==9.5.0
-ipython_pygments_lexers==1.1.1
-ipywidgets==8.1.7
+
 jedi==0.19.2
 Jinja2==3.1.6
 joblib==1.5.2
@@ -55,13 +50,11 @@ SQLAlchemy==2.0.44
 stack-data==0.6.3
 starlette==0.48.0
 storage3==2.25.1
-streamlit==1.50.0
 StrEnum==0.4.15
 supabase==2.25.1
 supabase-auth==2.25.1
 supabase-functions==2.25.1
-sympy==1.14.0
-widgetsnbextension==4.0.14
 xgboost==3.1.2
+
 
 
