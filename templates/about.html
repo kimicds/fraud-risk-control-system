@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Fraud Risk Control System</h1>
+        <p class="lead text-muted">A professional platform for monitoring, predicting, and investigating financial fraud in real-time.</p>
+    </div>
+
+    <!-- Features Cards -->
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt-fill fs-1 text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">Sender Location Capture</h5>
+                    <p class="card-text text-muted">Transactions automatically log the sender's latitude and longitude, supporting geographic analysis for fraud detection.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body text-center">
+                    <i class="bi bi-journal-text fs-1 text-success mb-3"></i>
+                    <h5 class="card-title fw-bold">Data Logging & Retraining</h5>
+                    <p class="card-text text-muted">Transactions can be recorded for retraining purposes, improving the predictive accuracy of the fraud detection model over time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-danger">
+                <div class="card-body text-center">
+                    <i class="bi bi-shield-fill-check fs-1 text-danger mb-3"></i>
+                    <h5 class="card-title fw-bold">Real-time Fraud Prediction</h5>
+                    <p class="card-text text-muted">Each transaction is evaluated instantly using a machine learning model, with high-risk transactions flagged for review.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body text-center">
+                    <i class="bi bi-exclamation-triangle-fill fs-1 text-warning mb-3"></i>
+                    <h5 class="card-title fw-bold">Investigation Workflow</h5>
+                    <p class="card-text text-muted">Flagged transactions are organized for efficient review and follow-up by compliance and investigation teams.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body text-center">
+                    <i class="bi bi-bar-chart-line-fill fs-1 text-info mb-3"></i>
+                    <h5 class="card-title fw-bold">Analytics & Insights</h5>
+                    <p class="card-text text-muted">Monitor transaction patterns, fraud trends, and risk hotspots to support strategic decisions and risk mitigation.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+
+<h1 class="fw-bold text-primary text-center mb-4">Fraud Prediction</h1>
+
+{% if error_message %}
+<div class="alert alert-danger text-center fs-5">
+<strong>Invalid Transaction</strong><br>
+{{ error_message }}
+</div>
+{% endif %}
+
+{% if result %}
+<div class="text-center mb-4">
+<span class="badge
+{% if result == 'Fraud' %}
+bg-danger
+{% elif result == 'Invalid' %}
+bg-warning text-dark
+{% else %}
+bg-success
+{% endif %}
+fs-3 p-3">
+{{ result }}
+</span>
+</div>
+{% endif %}
+
+<form method="POST">
+
+<div class="row">
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Transaction Hour</label>
+<input type="number" name="transaction_hour" class="form-control" value="{{data.transaction_hour if data}}">
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Transaction Amount</label>
+<input type="number" step="0.01" name="transaction_amount" class="form-control" value="{{data.transaction_amount if data}}">
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Origin Balance</label>
+<input type="number" step="0.01" name="origin_balance_before" class="form-control" value="{{data.origin_balance_before if data}}">
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Destination Balance</label>
+<input type="number" step="0.01" name="destination_balance_before" class="form-control" value="{{data.destination_balance_before if data}}">
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Transaction Type</label>
+<select name="transaction_type" class="form-control">
+<option>CASH_IN</option>
+<option>CASH_OUT</option>
+<option>DEBIT</option>
+<option>PAYMENT</option>
+<option>TRANSFER</option>
+</select>
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Sender Account</label>
+<input type="text" name="sender_account" class="form-control" value="{{data.sender_account if data}}">
+</div>
+
+<div class="col-md-4 mb-3">
+<label class="form-label">Receiver Account</label>
+<input type="text" name="receiver_account" class="form-control" value="{{data.receiver_account if data}}">
+</div>
+
+</div>
+
+<input type="hidden" name="latitude" id="latitude">
+<input type="hidden" name="longitude" id="longitude">
+
+<div class="text-center mt-4">
+<button class="btn btn-primary btn-lg">Run Fraud Check</button>
+</div>
+
+</form>
+
+</div>
+
+<script>
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(function(position) {
+document.getElementById('latitude').value = position.coords.latitude;
+document.getElementById('longitude').value = position.coords.longitude;
+});
+}
+</script>
+
+{% endblock %}
