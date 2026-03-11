@@ -12,9 +12,9 @@ from dotenv import load_dotenv
 # -------------------
 load_dotenv()
 
-EMAIL_USER = "akimuodunola@gmail.com"
-EMAIL_PASS = "ezizemqmwhibutpw"
-MODEL_PATH = "fraud_detection_model.pkl"  # default if not set
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
+MODEL_PATH = os.getenv("MODEL_PATH", "fraud_detection_model.pkl")
 
 # Validate required env variables
 required_vars = ["EMAIL_USER", "EMAIL_PASS", "MODEL_PATH"]
@@ -245,5 +245,6 @@ if __name__ == "__main__":
     #app.run(debug=True)
     port = int(os.environ.get("PORT", 5000))  # Render provides PORT env variable
     app.run(host="0.0.0.0", port=port)
+
 
 
